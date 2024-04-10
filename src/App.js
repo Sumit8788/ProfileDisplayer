@@ -1,9 +1,11 @@
-import UserData from "./UserData";
+// import UserData from "./UserData";
+import AdminPannel from "./AdminPannel";
 
 function App() {
   return (
     <>
-      <UserData></UserData>
+      {/* <UserData></UserData> */}
+      <AdminPannel></AdminPannel>
     </>
   );
 }

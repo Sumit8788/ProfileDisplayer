@@ -1,0 +1,52 @@
+  h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 15%;
+    width: 100%;
+  }
+
+  form {
+    width: 45%;
+    margin: auto;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  textarea,
+  input[type='file'] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type='file'] {
+    margin-top: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button[type='submit'] {
+    background-color: rgb(110, 110, 227);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button[type='submit']:hover {
+    background-color: white;
+    color: rgb(110, 110, 227);
+  }
