@@ -1,6 +1,7 @@
 import UserData from "./UserData";
 import AdminPannel from "./AdminPannel";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UpdateUser from "./UpdateUser";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AdminPannel />} />
         <Route path="/user" element={<UserData />} />
+        <Route path="/update" element={<UpdateUser />} />
       </Routes>
     </BrowserRouter>
     // <BrowserRouter>

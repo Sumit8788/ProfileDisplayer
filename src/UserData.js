@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./userdata.css";
+import { Link } from 'react-router-dom';
 
 function UserData() {
     const [userdata, setUserdata] = useState([]);
@@ -26,8 +27,18 @@ function UserData() {
     const handleCloseInfo = () => {
         setSelecteduser(null);
     }
-    const handleDelete = (id) => {
-        axios.delete(`https://6616686cb8b8e32ffc7d63b9.mockapi.io/admin/admin/${id}`)
+    const handleDelete = async (id) => {
+        await axios.delete(`https://6616686cb8b8e32ffc7d63b9.mockapi.io/admin/admin/${id}`)
+        await getdata();
+    }
+    const saveData = (id, name, email, number, interest, description, img) => {
+        localStorage.setItem("id", id);
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("number", number);
+        localStorage.setItem("interest", interest);
+        localStorage.setItem("description", description);
+        localStorage.setItem("img", img);
     }
     useEffect(() => {
         getdata();
@@ -54,7 +65,9 @@ function UserData() {
                                         <img src={data.img} alt='img' height='20px' width='20px' />
                                     </div>
                                 </div>
-                                <button className='btn'>Edit</button>
+                                <Link to='/update'>
+                                    <button className='btn' onClick={() => { saveData(data.id, data.name, data.email, data.number, data.interest, data.description, data.img) }}>Edit</button>
+                                </Link>
                                 <button className='btn' onClick={() => { handleDelete(data.id) }}>Delete</button>
                             </div>
                         )
