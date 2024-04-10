@@ -32,9 +32,9 @@ function AdminPannel() {
         setImg(e.target.value);
     }
     const navigate = useNavigate();
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        axios.post(
+        await axios.post(
             "https://6616686cb8b8e32ffc7d63b9.mockapi.io/admin/admin",
             {
                 name: name,
@@ -45,7 +45,7 @@ function AdminPannel() {
                 img: img
             });
         // console.log('Form submitted');
-        navigate("/user")
+        await navigate("/user")
     };
 
     return (

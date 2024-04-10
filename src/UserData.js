@@ -12,10 +12,9 @@ function UserData() {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
+
     };
-    useEffect(() => {
-        getdata();
-    }, [userdata]);
+
 
     // useEffect(() => {
     //     console.log(selecteduser);
@@ -27,27 +26,36 @@ function UserData() {
     const handleCloseInfo = () => {
         setSelecteduser(null);
     }
+    const handleDelete = (id) => {
+        axios.delete(`https://6616686cb8b8e32ffc7d63b9.mockapi.io/admin/admin/${id}`)
+    }
+    useEffect(() => {
+        getdata();
+    }, [userdata]);
 
     return (
         <>
             <h1 id='uh1'>User Data</h1>
+
             <div id='container'>
                 {
                     userdata.map((data) => {
                         return (
-                            <div className='data-item' onClick={() => {
-                                handleUserClick(data)
-                            }}>
-                                <div className='info-div1'
-                                >
-                                    <p className='name'>Name: {data.name}</p>
-                                    <p className='description'><b>Description: </b>{data.description}</p>
-                                </div>
-                                <div className='info-div2'>
-                                    <img src={data.img} alt='img' height='20px' width='20px' />
+                            <div className='data-item' >
+                                <div onClick={() => {
+                                    handleUserClick(data)
+                                }}>
+                                    <div className='info-div1'
+                                    >
+                                        <p className='name'>Name: {data.name}</p>
+                                        <p className='description'><b>Description: </b>{data.description}</p>
+                                    </div>
+                                    <div className='info-div2'>
+                                        <img src={data.img} alt='img' height='20px' width='20px' />
+                                    </div>
                                 </div>
                                 <button className='btn'>Edit</button>
-                                <button className='btn'>Delete</button>
+                                <button className='btn' onClick={() => { handleDelete(data.id) }}>Delete</button>
                             </div>
                         )
                     })
