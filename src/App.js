@@ -1,11 +1,12 @@
-// import UserData from "./UserData";
-import AdminPannel from "./AdminPannel";
+import UserData from "./UserData";
+// import AdminPannel from "./AdminPannel";
+
 
 function App() {
   return (
     <>
-      {/* <UserData></UserData> */}
-      <AdminPannel></AdminPannel>
+      <UserData></UserData>
+      {/* <AdminPannel></AdminPannel> */}
     </>
   );
 }
