@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+#uh1{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 15%;
+    width: 100%;
+}
+  
+  #container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .data-item {
+    margin: 20px;
+    width: 30%;
+    background-color:aliceblue;
+    border: 1px solid lightgray ;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .info-div1,
+  .info-div2 {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: grey;
+  }
+  
+ img {
+  height: 150px;  
+  width: 300px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+  .btn{
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    margin: 5px;
+    background-color: rgb(110, 110, 227);
+    color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .btn:hover{
+    background-color: white;
+    color: rgb(110, 110, 227);
+  }
+  
+  /* Additions Info Popup */
+.additional-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999; /* Ensure it's on top of other content */
+}
+
+.additional-info p {
+  margin-bottom: 10px;
+}
+
+.additional-info p:last-child {
+  margin-bottom: 0;
+}

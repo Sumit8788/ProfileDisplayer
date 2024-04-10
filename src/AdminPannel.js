@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AdminPannel.css';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 
 function AdminPannel() {
     const [name, setName] = useState("");
@@ -31,25 +31,26 @@ function AdminPannel() {
     const handleImgChange = (e) => {
         setImg(e.target.value);
     }
-
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.post(
             "https://6616686cb8b8e32ffc7d63b9.mockapi.io/admin/admin",
             {
-            name:name,
-            email:email,
-            number:number,
-            interest:interest,
-            description:description,
-            img:img
-        });
-        console.log('Form submitted');
+                name: name,
+                email: email,
+                number: number,
+                interest: interest,
+                description: description,
+                img: img
+            });
+        // console.log('Form submitted');
+        navigate("/user")
     };
 
     return (
         <>
-            <h1>Admin Pannel</h1>
+            <h1 id='ah1'>Admin Pannel</h1>
 
             <form onSubmit={handleSubmit}>
 
@@ -69,7 +70,7 @@ function AdminPannel() {
                 <textarea id='desc' placeholder='Enter your Description' value={description} onChange={handleDescriptionChange} rows={4} required /><br />
 
                 <label htmlFor='image'>Upload Picture: </label>
-                <input type="file" id='image' name='image' accept='image/*' onChange={handleImgChange} required /><br />
+                <input type="text" id='image' name='image' accept='image/*' onChange={handleImgChange} required /><br />
 
                 <button type='submit'>Upload</button>
             </form>
