@@ -45,9 +45,14 @@ function UserData() {
     }, [userdata]);
 
     return (
-        <>
-            <h1 id='uh1'>User Data</h1>
-
+        <>A
+            <div id='header'>
+                <h1 id='uh1'>User Data</h1>
+                <div>
+                    <input type='search' id='searchbox'></input>
+                    <button id='searchbtn'>Search</button>
+                </div>
+            </div>
             <div id='container'>
                 {
                     userdata.map((data) => {

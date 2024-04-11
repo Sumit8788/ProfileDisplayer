@@ -1,8 +1,10 @@
   #ah1{
     text-align: center;
     background-color: black;
+    margin-bottom: 20px;
     color: white;
-    height: 15%;
+    font-size: 3rem;
+    height: 20%;
     width: 100%;
   }
 
@@ -36,9 +38,10 @@
     resize: vertical;
   }
   
-  button[type='submit'] {
+  .admin-btn {
     background-color: rgb(110, 110, 227);
     color: white;
+    margin: 10px 10px 0px 0px;
     padding: 10px 20px;
     border: 2px solid black;
     border-radius: 4px;
@@ -46,7 +49,7 @@
     font-size: 16px;
   }
   
-  button[type='submit']:hover {
+  .admin-btn:hover {
     background-color: white;
     color: rgb(110, 110, 227);
   }

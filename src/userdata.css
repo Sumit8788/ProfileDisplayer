@@ -3,14 +3,37 @@
     padding: 0;
   }
   
-#uh1{
-    text-align: center;
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: black;
     color: white;
     height: 15%;
     width: 100%;
 }
-  
+ #uh1{
+  margin-left: 20px;
+ }
+ #searchbox{
+  height: 25px;
+ } 
+ #searchbtn{
+    height: 25px;
+    width: 70px;
+    margin-left: 5px;
+    margin-right: 20px;
+    background-color: rgb(110, 110, 227);
+    color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+ }
+ #searchbtn:hover{
+  background-color: white;
+    color: rgb(110, 110, 227);
+ }
   #container {
     /* max-width: 1200px; */
     margin: 0 auto;
@@ -68,25 +91,61 @@
     background-color: white;
     color: rgb(110, 110, 227);
   }
+  .additional-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
   
-  /* Additions Info Popup */
-.additional-info {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999; /* Ensure it's on top of other content */
+  .additional-info p {
+    margin-bottom: 10px;
+  }
+  
+  .additional-info p:last-child {
+    margin-bottom: 0;
+  }
+  
+@media(max-width:500px){
+  .data-item{
+    width: 40%;
+  }
+  img{
+    width: 100px;
+    margin:auto;
+  }
 }
-
-.additional-info p {
-  margin-bottom: 10px;
+@media(min-width:500px) and (max-width:700px){
+  img{
+    width: 100px;
+    margin:auto;
+  }
 }
-
-.additional-info p:last-child {
-  margin-bottom: 0;
+@media(min-width:700px) and (max-width:1000px){
+  img{
+    width: 150px;
+    margin:auto;
+  }
+}
+@media (max-width:300px){
+  .description {
+    font-size: 14px;
+    color: grey;
+  }
+  img{
+    width: 70px;
+    margin:auto;
+  }
+}
+@media(min-width:1000px) and (max-width:1200px){
+  img{
+    width: 250px;
+    margin:auto;
+  }
 }

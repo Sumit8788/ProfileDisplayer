@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AdminPannel.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function AdminPannel() {
     const [name, setName] = useState("");
@@ -72,7 +72,10 @@ function AdminPannel() {
                 <label htmlFor='image'>Upload Picture: </label>
                 <input type="text" id='image' name='image' accept='image/*' onChange={handleImgChange} required /><br />
 
-                <button type='submit'>Upload</button>
+                <button className='admin-btn' type='submit'>Upload</button>
+                <Link to="/user">
+                    <button className='admin-btn'>Show Users</button>
+                </Link>
             </form>
         </>
     )
